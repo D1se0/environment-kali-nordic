@@ -4,6 +4,8 @@ Minimalist, clean and modern XFCE environment for Kali Linux, designed for hacki
 
 > ⚠️ Built specifically for Kali Linux 6.18.12+kali-amd64 (2026)
 
+Source: [Source Credits](https://www.pling.com/p/1908883/)
+
 ---
 
 ## 🧠 Overview
