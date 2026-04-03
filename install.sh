@@ -124,7 +124,7 @@ run "cd Radioactive-nord && ./install.sh && cd .."
 run "rm -rf Radioactive-nord"
 
 log "Fuentes"
-run "7z x fonts.7z"
+run "7z x fonts.7z && mv fonts/fonts/* fonts && rm -rf fonts/fonts"
 run "mv fonts ~/.local/share"
 run "rm -rf fonts.7z"
 
