@@ -218,5 +218,7 @@ Use responsibly.
 If you like the project:
 
 ⭐ Star the repo
+
 🍴 Fork it
+
 📢 Share it
