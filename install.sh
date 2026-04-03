@@ -92,7 +92,7 @@ run "sudo apt update"
 
 log "Instalando dependencias"
 run "echo 'deb http://deb.debian.org/debian unstable main' | sudo tee -a /etc/apt/sources.list"
-run "sudo apt update && sudo apt install -y mugshot xfce4-terminal unzip git curl"
+run "sudo apt update && sudo apt install -y mugshot xfce4-terminal unzip git curl p7zip-full"
 
 run "xfconf-query -c xfce4-session -p /general/TerminalEmulator -s xfce4-terminal --create -t string"
 echo "TerminalEmulator=xfce4-terminal" > ~/.config/xfce4/helpers.rc
@@ -103,6 +103,8 @@ run "xfce4-panel -r"
 # =========================
 
 cd "$SCRIPT_DIR"
+
+run "7z x Nordzy-cyan-dark-MOD.7z && rm -rf Nordzy-cyan-dark-MOD.7z"
 
 log "Instalando temas GTK"
 run "unzip -o GTK-XFWM-Theme.zip"
@@ -122,9 +124,9 @@ run "cd Radioactive-nord && ./install.sh && cd .."
 run "rm -rf Radioactive-nord"
 
 log "Fuentes"
-run "unzip -o fonts.zip"
+run "7z x fonts.7z"
 run "mv fonts ~/.local/share"
-run "rm -rf fonts.zip"
+run "rm -rf fonts.7z"
 
 log "Kvantum"
 run "unzip -o Kvantum-theme.zip"
