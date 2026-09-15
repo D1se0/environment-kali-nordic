@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-base text-ink font-sans antialiased;
+}
+
+::selection {
+  background: __ACCENT__;
+  color: #0b0b0e;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0b0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #232329;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: __ACCENT__;
+}
+
+@layer components {
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(__ACCENT_RGB__, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(__ACCENT_RGB__, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 18px rgba(__ACCENT_RGB__, 0.55);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(100deg, #ffffff 0%, #d6d6dc 45%, __ACCENT__ 100%);
+  }
+
+  .section-tag {
+    @apply font-mono text-xs tracking-[0.3em] uppercase;
+    color: __ACCENT__;
+  }
+
+  .card {
+    @apply bg-panel/80 border border-edge rounded-xl p-6 backdrop-blur-sm transition-all duration-300;
+  }
+  .card:hover {
+    @apply border-accent/50;
+    box-shadow: 0 0 24px 0 rgba(__ACCENT_RGB__, 0.4);
+  }
+
+  .kbd {
+    @apply inline-flex items-center justify-center min-w-[1.9rem] text-center px-2 py-1 rounded-md border border-edge bg-[#1a1a20] text-xs font-mono text-ink;
+    box-shadow: 0 2px 0 0 #0b0b0e;
+  }
+
+  .chip {
+    @apply px-3 py-1.5 rounded-full border border-edge bg-panel/70 text-xs text-grey backdrop-blur-sm;
+  }
+}
